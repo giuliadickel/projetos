@@ -1,23 +1,34 @@
-<script>
-document.getElementById("demo").innerHTML = "My First JavaScript";
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+  }
 
-document.getElementById("demo").innerHTML = 5 + 6;
+  function myFunction() {
+    document.getElementById("demo1").innerHTML = "Hello Dolly!";
+    document.getElementById("demo2").innerHTML = "How are you?";
+  }
 
-document.write(5 + 6);
+  var x = "John" + " " + "Doe";
+  document.getElementById("demo").innerHTML = x;
 
-var a, b, c;
-a = 5;
-b = 6;
-c = a + b;
-document.getElementById("demo1").innerHTML = c;
+  
+var carName = "Volvo";
+myFunction();
 
-var a, b, c;
-a = 5; b = 6; c = a + b;
-document.getElementById("demo1").innerHTML = c;
+function myFunction(p1, p2) {
+    return p1 * p2;
+  }
+  document.getElementById("demo").innerHTML = myFunction(4, 3);
+  </script>
 
-document.getElementById("demo").innerHTML = 10.50;
+  function toCelsius(f) {
+    return (5/9) * (f-32);
+  }
+  document.getElementById("demo").innerHTML = toCelsius(77);
 
-document.getElementById("demo").innerHTML = 'John Doe';
+  // Create an object:
+var car = {type:"Fiat", model:"500", color:"white"};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML = "The car type is " + car.type;
 
 
-</script>

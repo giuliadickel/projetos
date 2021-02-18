@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  
+  <script src="jsstudy.js"></script>
 </head>
 <body>
 
@@ -119,6 +119,833 @@
 
 <p>Four values - border-radius: 15px 50px 30px 5px:</p>
 <p id="rcorners1"></p>
+
+<h2>JavaScript in Head</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+<h2>The window.print() Method</h2>
+
+<p>Click the button to print the current page.</p>
+
+<button onclick="window.print()">Print this page</button>
+
+<h2>JavaScript Statements</h2>
+
+<p>JavaScript code blocks are written between { and }</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<h2>JavaScript Variables</h2>
+
+<p>Create a variable, assign a value to it, and display it:</p>
+
+<p id="demo"></p>
+
+<script>
+  var carName = "Volvo";
+  document.getElementById("demo").innerHTML = carName;
+  </script>
+
+<h2>JavaScript Variables</h2>
+
+<p>The result of adding "John" + " " + "Doe":</p>
+
+<p id="demo"></p>
+
+<h2>JavaScript Scope</h2>
+
+<p>A GLOBAL variable can be accessed from any script or function.</p>
+
+<p id="demo"></p>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Array indexes are zero-based, which means the first item is [0].</p>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["Saab","Volvo","BMW"];
+
+document.getElementById("demo").innerHTML = cars[0];
+</script>
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+var person = {
+  firstName : "John",
+  lastName  : "Doe",
+  age     : 50,
+  eyeColor  : "blue"
+};
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+<p id="demo"></p>
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo"></p>
+
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+<p id="demo"></p>
+
+<h2>JavaScript String Properties</h2>
+
+<p>The length property returns the length of a string:</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var sln = txt.length;
+document.getElementById("demo").innerHTML = sln;
+</script>
+
+<h2>JavaScript String Methods</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a specified text:</p>
+
+<p id="demo"></p>
+
+<script>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+document.getElementById("demo").innerHTML = pos;
+</script>
+
+<p>Convert string to upper case:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo">Hello World!</p>
+
+<script>
+function myFunction() {
+  var text = document.getElementById("demo").innerHTML;
+  document.getElementById("demo").innerHTML = text.toUpperCase();
+}
+</script>
+
+<h2>JavaScript Numbers</h2>
+
+<p>Extra large or extra small numbers can be written with scientific (exponent) notation:</p>
+
+<p id="demo"></p>
+
+<script>
+var x = 123e5;
+var y = 123e-5;
+document.getElementById("demo").innerHTML = x + "<br>" + y;
+</script>
+
+<h2>JavaScript Numbers</h2>
+
+<p>Infinity is returned if you calculate a number outside the largest possible number:</p>
+
+<p id="demo"></p>
+
+<script>
+var myNumber = 2; 
+var txt = "";
+while (myNumber != Infinity) {
+   myNumber = myNumber * myNumber;
+   txt = txt + myNumber + "<br>";
+}
+document.getElementById("demo").innerHTML = txt;
+</script>
+
+<h2>JavaScript Number Methods</h2>
+
+<p>The toFixed() method rounds a number to a given number of digits.</p>
+<p>For working with money, toFixed(2) is perfect.</p>
+
+<p id="demo"></p>
+
+<script>
+var x = 9.656;
+document.getElementById("demo").innerHTML =
+  x.toFixed(0) + "<br>" +
+  x.toFixed(2) + "<br>" +
+  x.toFixed(4) + "<br>" +
+  x.toFixed(6);
+</script>
+
+<h2>JavaScript Global Methods</h2>
+
+<p>The Number() method converts variables to numbers:</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+  Number(true) + "<br>" +
+  Number(false) + "<br>" +
+  Number("10") + "<br>" + 
+  Number("  10") + "<br>" +
+  Number("10  ") + "<br>" +
+  Number(" 10  ") + "<br>" +
+  Number("10.33") + "<br>" + 
+  Number("10,33") + "<br>" +
+  Number("10 33") + "<br>" +
+  Number("John");
+</script>
+
+<h2>JavaScript Arrays</h2>
+
+<p>JavaScript array elements are accessed using numeric indexes (starting from 0).</p>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Opel";
+document.getElementById("demo").innerHTML = cars;
+</script>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>join()</h2>
+
+<p>The join() method joins array elements into a string.</p>
+
+<p>It this example we have used " * " as a separator between the elements:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+</script>
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>splice()</h2>
+
+<p>The splice() methods can be used to remove array elements.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+function myFunction() {
+  fruits.splice(0, 1);
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction1() {
+  points.sort();
+  document.getElementById("demo").innerHTML = points;
+}
+function myFunction2() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+<h2>JavaScript Array.forEach()</h2>
+
+<p>Calls a function once for each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+  txt = txt + value + "<br>"; 
+}
+</script>
+
+<h2>JavaScript Array.map()</h2>
+
+<p>Creates a new array by performing a function on each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+document.getElementById("demo").innerHTML = numbers2;
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+</script>
+
+<h2>JavaScript Array.filter()</h2>
+
+<p>Creates a new array with all array elements that passes a test.</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+document.getElementById("demo").innerHTML = over18;
+
+function myFunction(value) {
+  return value > 18;
+}
+</script>
+
+<h2>JavaScript new Date()</h2>
+
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+<p id="demo"></p>
+
+<script>
+var b1 = Boolean(100);
+var b2 = Boolean(3.14);
+var b3 = Boolean(-15);
+var b4 = Boolean("Hello");
+var b5 = Boolean('false');
+var b6 = Boolean(1 + 7 + 3.14);
+
+document.getElementById("demo").innerHTML =
+"100 is " + b1 + "<br>" +
+"3.14 is " + b2 + "<br>" +
+"-15 is " + b3 + "<br>" +
+"Any (not empty) string is " + b4 + "<br>" +
+"Even the string 'false' is " + b5 + "<br>" +
+"Any expression (except zero) is " + b6;
+</script>
+
+<p>Never create booleans as objects.</p>
+<p>Booleans and objects cannot be safely compared.</p>
+
+<p id="demo"></p>
+
+<script>
+var x = false;         // x is a boolean
+var y = new Boolean(false);  // y is an object
+document.getElementById("demo").innerHTML = (x==y);
+</script>
+
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var age, voteable;
+  age = document.getElementById("age").value;
+  voteable = (age < 18) ? "Too young":"Old enough";
+  document.getElementById("demo").innerHTML = voteable + " to vote.";
+}
+</script>
+
+<p>Click the button to display a time-based greeting:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var hour = new Date().getHours(); 
+  var greeting;
+  if (hour < 18) {
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening";
+  }
+  document.getElementById("demo").innerHTML = greeting;
+}
+</script>
+
+<p id="demo"></p>
+
+<script>
+var day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+</script>
+
+<h2>JavaScript switch</h2>
+
+<p id="demo"></p>
+
+<script>
+var text;
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>JavaScript switch</h2>
+
+<p id="demo"></p>
+
+<script>
+var x = "0";
+
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>JavaScript For Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>JavaScript For/In Loop</h2>
+
+<p>The for/in statement loops through the properties of an object.</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "";
+var person = {fname:"John", lname:"Doe", age:25}; 
+var x;
+for (x in person) {
+  txt += person[x] + " ";
+}
+document.getElementById("demo").innerHTML = txt;
+</script>
+
+<h2>JavaScript Array.forEach()</h2>
+
+<p>Calls a function once for each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+  txt = txt + value + "<br>"; 
+}
+</script>
+
+<h2>JavaScript For/Of Loop</h2>
+
+<p>The for/of statement loops through the values of an iterable object.</p>
+
+<p id="demo"></p>
+
+<script>
+let cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+
+for (let x of cars) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>JavaScript For/Of Loop</h2>
+
+<p>The for/of statement loops through the values of an iterable object.</p>
+
+<p id="demo"></p>
+
+<script>
+let language = "JavaScript";
+let text = "";
+
+for (let x of language) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+while (cars[i]) {
+  text += cars[i] + "<br>";
+  i++;
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>JavaScript break</h2>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var text = "";
+
+list: {
+  text += cars[0] + "<br>"; 
+  text += cars[1] + "<br>"; 
+  break list;
+  text += cars[2] + "<br>"; 
+  text += cars[3] + "<br>"; 
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+<h2>The JavaScript typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+  typeof "john" + "<br>" +
+  typeof 3.14 + "<br>" +
+  typeof NaN + "<br>" +
+  typeof false + "<br>" +
+  typeof [1,2,3,4] + "<br>" +
+  typeof {name:'john', age:34} + "<br>" +
+  typeof new Date() + "<br>" +
+  typeof function () {} + "<br>" +
+  typeof myCar + "<br>" +
+  typeof null;
+</script>
+
+<h2>JavaScript Bitwise OR</h2>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 5 | 1;
+</script>
+
+<h2>JavaScript Convert Decimal to Binary</h2>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = dec2bin(-5);
+function dec2bin(dec){
+  return (dec >>> 0).toString(2);
+}
+</script>
+
+<h2>JavaScript Regular Expressions</h2>
+
+<p>Replace "microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo">Please visit Microsoft and Microsoft!</p>
+
+<script>
+function myFunction() {
+  var str = document.getElementById("demo").innerHTML; 
+  var txt = str.replace(/microsoft/i,"W3Schools");
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+<h2>JavaScript Scope</h2>
+
+<p>Outside myFunction() carName is undefined.</p>
+
+<p id="demo1"></p>
+
+<p id="demo2"></p>
+
+<script>
+myFunction();
+
+function myFunction() {
+  var carName = "Volvo";
+  document.getElementById("demo1").innerHTML = typeof carName + " " + carName;
+}
+document.getElementById("demo2").innerHTML = typeof carName;
+</script>
+
+<h2>With "use strict":</h2>
+<h3>Using a variable without declaring it, is not allowed.</h3>
+
+<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+<script>
+"use strict";
+x = 3.14;  // This will cause an error (x is not defined).
+</script>
+
+<h2>The JavaScript <i>this</i> Keyword</h2>
+
+<p>In this example, <b>this</b> represents the <b>person</b> object.</p>
+<p>Because the person object "owns" the fullName method.</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an object:
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+<h2>The JavaScript <i>this</i> Keyword</h2>
+
+<p>In this example, <b>this</b> represents the person object that "owns" the myFunction method.</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an object:
+var person = {
+  firstName  : "John",
+  lastName   : "Doe",
+  id     : 5566,
+  myFunction : function() {
+    return this;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.myFunction();
+</script>
+
+<h2>JavaScript "this"</h2>
+
+<p>This example demonstrate that in Arrow Functions, the "this" keyword represents the object that owns the function, no matter who calls the function.</p>
+
+<p>Click the button to execute the "hello" function again, and you will see that "this" still  represents the window object.</p>
+
+<button id="btn">Click Me!</button>
+
+<p id="demo"></p>
+
+<script>
+var hello;
+
+hello = () => {
+  document.getElementById("demo").innerHTML += this;
+}
+
+//The window object calls the function:
+window.addEventListener("load", hello);
+
+//A button object calls the function:
+document.getElementById("btn").addEventListener("click", hello);
+</script>
+
+<h2>JavaScript Class</h2>
+
+<p>How to use a JavaScript Class.</p>
+
+<p id="demo"></p>
+
+<script>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+
+myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+myCar.name + " " + myCar.year;
+</script>
+
+<h2>JavaScript Class Method</h2>
+
+<p>How to define and use a Class method.</p>
+
+<p id="demo"></p>
+
+<script>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+</script>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+
+<h2>My First Web Page</h2>
+
+<p>Activate debugging in your browser (Chrome, IE, Firefox) with F12, and select "Console" in the debugger menu.</p>
+
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+
+<p>Never create strings as objects.</p>
+<p>Strings and objects cannot be safely compared.</p>
+
+<p id="demo"></p>
+
+<script>
+var x = "John";        // x is a string
+var y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = x===y;
+</script>
+
+
+
+
 
 </body>
 </html>
