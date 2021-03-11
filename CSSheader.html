@@ -2364,6 +2364,7 @@ function showHint(str) {
     xmlhttp.open("GET", "cd_catalog.xml", true);
     xmlhttp.send();
   }
+  
   function myFunction(xml) {
     var i;
     var xmlDoc = xml.responseXML;
@@ -2380,7 +2381,248 @@ function showHint(str) {
   }
   </script>
   
+  <h2>Store and retrieve data from local storage.</h2>
+
+<p id="demo105"></p>
+
+<script>
+var myObj, myJSON, text, obj;
+
+// Storing data:
+myObj = { name: "John", age: 31, city: "New York" };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo105").innerHTML = obj.name;
+</script>
   
+<h2>Create Object from JSON String</h2>
+
+<p id="demo106"></p>
+
+<script>
+var txt = '{"name":"John", "age":30, "city":"New York"}'
+var obj = JSON.parse(txt);
+document.getElementById("demo106").innerHTML = obj.name + ", " + obj.age;
+</script>
+
+<h2>Create JSON string from a JavaScript array.</h2>
+
+<p id="demo107"></p>
+
+<script>
+
+var arr = [ "John", "Peter", "Sally", "Jane" ];
+var myJSON = JSON.stringify(arr);
+document.getElementById("demo107").innerHTML = myJSON;
+</script>
+
+<p>How to loop through all properties in a JSON object.</p>
+
+<p id="demo108"></p>
+
+<script>
+var myObj, x;
+myObj = {"name":"John", "age":30, "car":null};
+for (x in myObj) {
+  document.getElementById("demo108").innerHTML += x + "<br>";
+}
+</script>
+
+<p>How to delete properties of a JSON object.</p>
+
+<p id="demo109"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "name":"John",
+  "age":30,
+  "cars": {
+  "car1":"Ford",
+  "car2":"BMW",
+  "car3":"Fiat"
+  }
+}
+delete myObj.cars.car2;
+
+for (i in myObj.cars) {
+  x += myObj.cars[i] + "<br>";
+}
+
+document.getElementById("demo109").innerHTML = x;
+</script>
+
+<p>Loopin through an array using a for loop:</p>
+
+<p id="demo110"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "name":"John",
+  "age":30,
+  "cars":[ "Ford", "BMW", "Fiat" ]
+};
+
+for (i = 0; i < myObj.cars.length; i++) {
+  x += myObj.cars[i] + "<br>";
+}
+document.getElementById("demo110").innerHTML = x;
+</script>
+
+<h2>Make a table based on JSON data.</h2>
+
+<p id="demo111"></p>
+
+<script>
+var obj, dbParam, xmlhttp, myObj, x, txt = "";
+obj = { table: "customers", limit: 20 };
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+    txt += "<table border='1'>"
+    for (x in myObj) {
+      txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+    }
+    txt += "</table>"    
+    document.getElementById("demo111").innerHTML = txt;
+  }
+};
+xmlhttp.open("POST", "json_demo_html_table.php", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+</script>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p><strong>Note:</strong> The geolocation property is not supported in IE8 and earlier versions.</p>
+
+<p id="demo112"></p>
+
+<script>
+var x = document.getElementById("demo112");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+<p id="demo113"></p>
+
+<script>
+localStorage.setItem("name","John Doe");
+document.getElementById("demo113").innerHTML = localStorage.getItem("name");
+</script>
+
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
+
+<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
+
+<script>
+var w;
+
+function startWorker() {
+  if(typeof(Worker) !== "undefined") {
+    if(typeof(w) == "undefined") {
+      w = new Worker("demo_workers.js");
+    }
+    w.onmessage = function(event) {
+      document.getElementById("result").innerHTML = event.data;
+    };
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+  }
+}
+
+function stopWorker() { 
+  w.terminate();
+  w = undefined;
+}
+</script>
+
+<p id="demo114">Fetch a file to change this text.</p>
+<script>
+
+let file = "fetch_info.txt"
+
+fetch (file)
+.then(x => x.text())
+.then(y => document.getElementById("demo114").innerHTML = y);
+
+</script>
+
+  <p>Click the button to get your coordinates.</p>
   
+  <button onclick="getLocation()">Try It</button>
+  
+  <p id="demo115"></p>
+  
+  <script>
+  var x = document.getElementById("demo115");
+  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Finding HTML Elements by Id</h2>
+
+<p id="id01">Hello World!</p>
+<p id="id02">Hello Sweden!</p>
+<p id="id03">Hello Japan!</p>
+
+<p id="demo116"></p>
+
+<script>
+$(document).ready(function() {
+  var myElements = $("#id01");
+  $("#demo116").text("The text from the id01 paragraph is: " + myElements[0].innerHTML);
+});
+</script>
+
+<h1>Showing HTML Elements</h1>
+
+<h2 id="01" style="display:none">Hello World!</h2>
+<h2 id="02" style="display:none">Hello Sweden!</h2>
+<h2 id="03" style="display:none">Hello Japan!</h2>
+
+<script>
+var myElement = document.getElementById("02");
+myElement.style.display = "";
+</script>
+
+
 </body>
 </html>
